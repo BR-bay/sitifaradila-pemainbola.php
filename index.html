@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Players</title>
+    <style>
+        /* Style untuk poster gambar */
+        .player-poster {
+            width: 200px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Football Players</h1>
+    <div id="player-list"></div>
+
+    <script>
+        // Data pemain bola
+        var players = [
+            {
+                "id": "1",
+                "no": "1",
+                "name": "Cristiano Ronaldo",
+                "position": "Forward",
+                "birth_date": "1985-02-05",
+                "poster": "https://m.media-amazon.com/images/I/71siE7G3W6L._AC_UF1000,1000_QL80_.jpg"
+            },
+            {
+                "id": "2",
+                "no": "2",
+                "name": "Lionel Messi",
+                "position": "Forward",
+                "birth_date": "1987-06-24",
+                "poster": "https://rukminim2.flixcart.com/image/850/1000/jd0jtzk0/poster/r/y/g/medium-lionel-messi-poster-leo-messi-poster-messi-posters-messi-original-imaf2y3evgpsuyk9.jpeg?q=90&crop=false"
+            },
+            {
+                "id": "3",
+                "no": "3",
+                "name": "Neymar Jr.",
+                "position": "Forward",
+                "birth_date": "1992-02-05",
+                "poster": "https://m.media-amazon.com/images/I/71Zw5X9vjML._AC_UF894,1000_QL80_.jpg"
+            },
+            {
+                "id": "4",
+                "no": "4",
+                "name": "Mohamed Salah",
+                "position": "Forward",
+                "birth_date": "1992-06-15",
+                "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ43gp_tuJ5rY8gjOAf1-f5Pcdtmfc3bch6w&s"
+            },
+            {
+                "id": "5",
+                "no": "5",
+                "name": "Kylian Mbappé",
+                "position": "Forward",
+                "birth_date": "1998-12-20",
+                "poster": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/kylian-mbappe-fifa-world-cup-poster-template-design-7d41a5e63943904c13e5fd91134c61f3_screen.jpg?ts=1669205676"
+            }
+        ];
+
+        // Fungsi untuk menampilkan pemain
+        function displayPlayers() {
+            var playerList = document.getElementById('player-list');
+
+            players.forEach(function(player) {
+                // Membuat elemen untuk setiap pemain
+                var playerDiv = document.createElement('div');
+                playerDiv.innerHTML = '<h2>' + player.name + '</h2>' +
+                                      '<p>No: ' + player.no + '</p>' +
+                                      '<p>Position: ' + player.position + '</p>' +
+                                      '<p>Birth Date: ' + player.birth_date + '</p>' +
+                                      '<img src="' + player.poster + '" class="player-poster" alt="' + player.name + '">';
+
+                // Menambahkan elemen pemain ke dalam daftar pemain
+                playerList.appendChild(playerDiv);
+            });
+        }
+
+        // Memanggil fungsi untuk menampilkan pemain
+        displayPlayers();
+    </script>
+</body>
+</html>
